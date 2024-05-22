@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository provides an open-source ComfyUI workflow for using DynamiCrafter, a tool for animating open-domain images using video diffusion priors. The workflow is designed to help other open-source users understand how to implement and use DynamiCrafter for various video generation tasks.
+This repository provides an open-source ComfyUI workflow for using [DynamiCrafter](https://github.com/Doubiiu/DynamiCrafter), a tool for animating open-domain images using video diffusion priors. The workflow is designed to help other open-source users understand how to implement and use DynamiCrafter for various video generation tasks.
 
 ## About DynamiCrafter
 
-DynamiCrafter leverages pre-trained video diffusion priors to animate still images based on text prompts. It supports high-resolution video generation, frame interpolation, and looping video creation. The tool is developed by researchers from CUHK and Tencent AI Lab.
+[DynamiCrafter](https://github.com/Doubiiu/DynamiCrafter) leverages pre-trained video diffusion priors to animate still images based on text prompts. It supports high-resolution video generation, frame interpolation, and looping video creation. The tool is developed by researchers from CUHK and Tencent AI Lab.
 
 ## Features
 
