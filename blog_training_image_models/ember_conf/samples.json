@@ -1,0 +1,17 @@
+[
+    
+      
+        {
+        "__version": 0,
+        "enabled": true,
+        "prompt": " 3mb3r, a 3d animated character  holds a welding torch emitting a steady flame, touching it to a thin metal rod in her hand, igniting vibrant, glow-like horns atop her head. She stands in an indoor setting with a purple geometric-patterned wall in the background, which complements her toned sweater and jewelry. The mood is focused and inventive, illuminated by the warm light of the flame, casting soft shadows around her space.",
+        "negative_prompt": "",
+        "height": 1024,
+        "width": 1024,
+        "seed": 42,
+        "random_seed": false,
+        "diffusion_steps": 20,
+        "cfg_scale": 4,
+        "noise_scheduler": "DPMPP_SDE_KARRAS"
+    }   
+]
