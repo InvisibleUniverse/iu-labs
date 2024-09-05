@@ -1,0 +1,49 @@
+File,Prompt
+crewai/task.py,Prompt of the task.
+crewai/crew.py,Path to the prompt json file to be used for the crew.
+crewai/agent.py,"You MUST follow these feedbacks: 
+ "
+crewai/pipeline/pipeline_kickoff_result.py,No JSON output found in the final task of the final crew. Please make sure to set the output_json property in the final task in your crew.
+crewai/crews/crew_output.py,No JSON output found in the final task. Please make sure to set the output_json property in the final task in your crew.
+crewai/tools/tool_usage.py,"Only tools available:
+###
+{self._render()}
+
+Return a valid schema for the tool, the tool name must be exactly equal one of the options, use this text to inform the valid output schema:
+
+{tool_string}```"
+crewai/tools/agent_tools.py,The identified system prompt
+crewai/agents/parser.py,"Thought: agent thought here
+Action: search
+Action Input: what is the temperature in SF?"
+crewai/agents/executor.py,Context length exceeded. Do you want to summarize the text to fit models context window?
+crewai/agents/agent_builder/base_agent_executor_mixin.py,Prompt human input for final decision making.
+crewai/agents/agent_builder/utilities/base_output_converter.py,Conversion instructions to the LLM.
+crewai/agents/agent_builder/utilities/base_agent_tool.py,"Your best answer to your coworker asking you this, accounting for the context shared."
+crewai/cli/deploy/main.py,Please sign up/login to CrewAI+ before using the CLI.
+crewai/cli/authentication/main.py,Signing Up to CrewAI+
+crewai/utilities/planning_handler.py,"Based on these tasks summary: {tasks_summary} 
+ Create the most descriptive plan based on the tasks descriptions, tools available, and agents' goals for them to execute their goals with perfection."
+crewai/utilities/converter.py,I'm gonna convert this raw text into valid JSON.
+crewai/utilities/__init__.py,Prompts
+crewai/utilities/instructor.py,The instructions to be sent to the instructor.
+crewai/utilities/prompts.py,Generate a standard prompt for task execution.
+crewai/utilities/parser.py,Context is currently only supported in code when creating a task. Please use the 'context' key in the task configuration.
+crewai/utilities/token_counter_callback.py,The system prompt is used during the process of calculating token costs for a language model interaction.
+crewai/utilities/exceptions/context_window_exceeding_exception.py,Consider using a smaller input or implementing a text splitting strategy.
+crewai/utilities/evaluators/task_evaluator.py,"Assess the quality of the task completed based on the description, expected output, and actual results.
+
+Task Description:
+{task.description}
+
+Expected Output:
+{task.expected_output}
+
+Actual Output:
+{output}
+
+Please provide:
+- Bullet points suggestions to improve future similar tasks
+- A score from 0 to 10 evaluating on completion, quality, and overall performance
+- Entities extracted from the task output, if any, their type, description, and relationships"
+crewai/utilities/evaluators/crew_evaluator_handler.py,"Your goal is to evaluate the performance of the agents in the crew based on the tasks they have performed using score from 1 to 10 evaluating on completion, quality, and overall performance."

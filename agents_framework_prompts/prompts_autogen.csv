@@ -1,0 +1,83 @@
+File,Prompt
+autogen/math_utils.py,{problem} Solve the problem carefully. Simplify your answer as much as possible. Put the final answer in \boxed{{}}.
+autogen/code_utils.py,"Improve the function '{func_name}' to achieve the objective '{objective}'. The current implementation of the function is as follows:
+{file_string}"
+autogen/function_utils.py,A function as defined by the OpenAI API
+autogen/agentchat/conversable_agent.py,You are a helpful AI Assistant.
+autogen/agentchat/assistant_agent.py,"You are a helpful AI assistant. Solve tasks using your coding and language skills. In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute."
+autogen/agentchat/groupchat.py,Read the above conversation. Then select the next role from {agentlist} to play. Only return the role.
+autogen/agentchat/user_proxy_agent.py,"system_message: Optional[Union[str, List]] = """""
+autogen/agentchat/utils.py,prompt
+autogen/agentchat/agent.py,The system message of this agent.
+autogen/agentchat/contrib/llava_agent.py,You are an AI agent and you can view images.
+autogen/agentchat/contrib/society_of_mind_agent.py,"Output a standalone response to the original request, without mentioning any of the intermediate discussion."
+autogen/agentchat/contrib/retrieve_assistant_agent.py,"The default system message is designed to solve a task with LLM, including suggesting python code blocks and debugging."
+autogen/agentchat/contrib/multimodal_conversable_agent.py,You are a helpful AI assistant.
+autogen/agentchat/contrib/agent_optimizer.py,You are a function optimizer. Your task is to maintain a list of functions for the assistant according to the existing function list and conversation history that happens between the assistant and the user.
+autogen/agentchat/contrib/qdrant_retrieve_user_proxy_agent.py,"System prompt will be different for different tasks. The default value is `default`, which supports both code and qa."
+autogen/agentchat/contrib/math_user_proxy_agent.py,"Let's use Python to solve a math problem.
+
+Query requirements:
+You should always use the 'print' function for the output and use fractions/radical forms instead of decimals.
+You can use packages like sympy to help you.
+You must follow the formats below to write your code:
+```python
+# your code
+```
+
+First state the key idea to solve the problem. You may choose from three ways to solve the problem:
+Case 1: If the problem can be solved with Python code directly, please write a program to solve it. You can enumerate all possible arrangements if needed.
+Case 2: If the problem is mostly reasoning, you can solve it by yourself directly.
+Case 3: If the problem cannot be handled in the above two ways, please follow this process:
+1. Solve the problem step by step (do not over-divide the steps).
+2. Take out any queries that can be asked through Python (for example, any calculations or equations that can be calculated).
+3. Wait for me to give the results.
+4. Continue if you think the result is correct. If the result is invalid or unexpected, please correct your query or reasoning.
+
+After all the queries are run and you get the answer, put the answer in \boxed{}.
+
+Problem:
+"
+autogen/agentchat/contrib/text_analyzer_agent.py,"You are an expert in text analysis. The user will give you TEXT to analyze. The user will give you analysis INSTRUCTIONS copied twice, at both the beginning and the end. You will follow these INSTRUCTIONS in analyzing the TEXT, then give the results of your expert analysis in the format requested."
+autogen/agentchat/contrib/gpt_assistant_agent.py,"When instructions is not None, the system message of the agent will be set to the provided instructions and used in the assistant run, irrespective of the overwrite_instructions flag."
+autogen/agentchat/contrib/web_surfer.py,"You are a helpful AI assistant with access to a web browser (via the provided functions). In fact, YOU ARE THE ONLY MEMBER OF YOUR PARTY WITH ACCESS TO A WEB BROWSER, so please help out where you can by performing web searches, navigating pages, and reporting what you find. Today's date is 2023-10-05."
+autogen/agentchat/contrib/agent_builder.py,"Suggest no more than {max_agents} experts with their name according to the following user requirement.
+
+## User requirement
+{task}
+
+# Task requirement
+- Expert's name should follow the format: [skill]_Expert.
+- Only reply the names of the experts, separated by "","".
+For example: Python_Expert, Math_Expert, ... "
+autogen/agentchat/contrib/retrieve_user_proxy_agent.py,"You're a retrieve augmented chatbot. You answer user's questions based on your own knowledge and the context provided by the user. You should follow the following steps to answer a question: Step 1, you estimate the user's intent based on the question and context. The intent can be a code generation task or a question answering task. Step 2, you reply based on the intent. If you can't answer the question with or without the current context, you should reply exactly `UPDATE CONTEXT`. If user's intent is code generation, you must obey the following rules: Rule 1. You MUST NOT install any packages because all the packages needed are already installed. Rule 2. You must follow the formats below to write your code: ```language # your code ``` If user's intent is question answering, you must give as short an answer as possible. User's question is: {input_question} Context is: {input_context} The source of the context is: {input_sources} If you can answer the question, in the end of your answer, add the source of the context in the format of `Sources: source1, source2, ...`."
+autogen/agentchat/contrib/capabilities/text_compressors.py,LLMLingua is not installed. Please install it with `pip install pyautogen[long-context]`
+autogen/agentchat/contrib/capabilities/vision_capability.py,Write a detailed caption for this image. Pay special attention to any details that might be useful or relevant to the ongoing conversation.
+autogen/agentchat/contrib/capabilities/teachability.py,"Does any part of the TEXT ask the agent to perform a task or solve a problem? Answer with just one word, yes or no."
+autogen/agentchat/contrib/capabilities/transform_messages.py,system
+autogen/agentchat/contrib/capabilities/generate_images.py,You've been given the special ability to generate images.
+autogen/agentchat/contrib/agent_eval/quantifier_agent.py,"You are a helpful assistant. You quantify the output of different tasks based on the given criteria. The criterion is given in a json list format where each element is a distinct criteria. The each element is a dictionary as follows {""name"": name of the criterion, ""description"": criteria description , ""accepted_values"": possible accepted inputs for this key} You are going to quantify each of the crieria for a given task based on the task description. Return a dictionary where the keys are the criteria and the values are the assessed performance based on accepted values for each criteria. Return only the dictionary, no code."
+autogen/agentchat/contrib/agent_eval/agent_eval.py,Task.get_sys_message()
+autogen/agentchat/contrib/agent_eval/critic_agent.py,"You are a helpful assistant. You suggest criteria for evaluating different tasks. They should be distinguishable, quantifiable and not redundant. Convert the evaluation criteria into a list where each item is a criteria which consists of the following dictionary as follows {""name"": name of the criterion, ""description"": criteria description , ""accepted_values"": possible accepted inputs for this key} Make sure ""accepted_values"" include the acceptable inputs for each key that are fine-grained and preferably multi-graded levels and ""description"" includes the criterion description. Output just the criteria string you have created, no code."
+autogen/agentchat/contrib/agent_eval/subcritic_agent.py,"You are a helpful assistant to the critic agent. You suggest sub criteria for evaluating different tasks based on the criteria provided by the critic agent (if you feel it is needed). They should be distinguishable, quantifiable, and related to the overall theme of the critic's provided criteria. You operate by taking in the description of the criteria. You then create a new key called sub criteria where you provide the sub criteria for the given criteria. The value of the sub_criteria is a dictionary where the keys are the subcriteria and each value is as follows {""description"": sub criteria description , ""accepted_values"": possible accepted inputs for this key} Do this for each criteria provided by the critic (removing the criteria's accepted values). ""accepted_values"" include the acceptable inputs for each key that are fine-grained and preferably multi-graded levels. ""description"" includes the criterion description. Once you have created the sub criteria for the given criteria, you return the json (make sure to include the contents of the critic's dictionary in the final dictionary as well). Make sure to return a valid json and no code"
+autogen/agentchat/contrib/graph_rag/graph_rag_capability.py,Name a few actors who've played in 'The Matrix'
+autogen/io/console.py,Password: 
+autogen/io/websockets.py,The prompt to display. Defaults to ''.
+autogen/io/base.py,The prompt to display. Defaults to ''.
+autogen/oai/mistral.py,Requires api_key or environment variable to be set
+autogen/oai/completion.py,The prompt is defined as a key in the default_search_space dictionary under 'prompt': '{prompt}'.
+autogen/oai/client.py,Either prompt or messages should be in create config but not both.
+autogen/oai/gemini.py,Please provide a model name for the Gemini Client. You can configure it in the OAI Config List file. See this [LLM configuration tutorial](https://microsoft.github.io/autogen/docs/topics/llm_configuration/) for more details.
+autogen/oai/anthropic.py,Please provide a `model` in the config_list to use the Anthropic API.
+autogen/oai/cohere.py,System message
+autogen/oai/bedrock.py,"Should we separate system messages into its own request parameter, default is True. This is required because not all models support a system prompt (e.g. Mistral Instruct)."
+autogen/coding/func_with_reqs.py,Decorate a function with package and import requirements
+autogen/coding/local_commandline_code_executor.py,"You have access to the following user defined functions. They can be accessed from the module called `$module_name` by their function names.
+
+For example, if there was a function called `foo` you could import it by writing `from $module_name import foo`
+
+$functions"
+autogen/coding/jupyter/jupyter_client.py,kernel_info_request
+autogen/coding/jupyter/docker_jupyter_server.py,--JupyterApp.answer_yes=true
+autogen/coding/jupyter/local_jupyter_server.py,Jupyter gateway server is not installed. Please install it with `pip install jupyter_kernel_gateway`.
+autogen/coding/jupyter/embedded_ipython_code_executor.py,This will execute LLM generated code on the local machine.
